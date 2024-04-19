@@ -1,0 +1,139 @@
+/* Reset CSS */
+body, h1, h2, h3, p, ul, li, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling */
+body {
+    font-family: 'Open Sans', sans-serif; /* Using Google Fonts */
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add a subtle drop shadow to header */
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-transform: uppercase; /* Change case to uppercase for headings */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide navigation menu by default on smaller screens */
+    }
+
+    nav.active ul {
+        display: block; /* Display navigation menu when active (hamburger menu clicked) */
+    }
+
+    nav.active ul li {
+        display: block; /* Display menu items vertically when active */
+        margin-right: 0; /* Remove margin between menu items */
+    }
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+section form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+section form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+section form input[type="text"],
+section form input[type="number"],
+section form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+section form button {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+section form button:hover {
+    background-color: #555;
+}
+
+section h2 {
+    margin-bottom: 15px;
+}
+
+footer {
+    background: linear-gradient(to right, #333, #666); /* Add gradient background to footer */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add a subtle drop shadow to footer */
+}
+
+/* Hamburger menu styles */
+.menu-toggle {
+    display: none; /* Hide menu toggle by default */
+    cursor: pointer;
+}
+
+.menu-toggle:hover {
+    color: #fff;
+}
+
+.menu-toggle:before {
+    content: "\2630"; /* Hamburger icon */
+    font-size: 24px;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Display menu toggle on smaller screens */
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: #fff;
+    }
+}

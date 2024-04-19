@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction To Web Programming Assignment</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // JavaScript function to handle form submission
+        function checkEligibility() {
+            var form = document.getElementById('eligibilityForm');
+            var diploma = form.elements['diploma'].value;
+            var experience = parseInt(form.elements['experience'].value);
+            var graduationDate = parseInt(form.elements['graduationDate'].value);
+            var skill = form.elements['skill'].value;
+
+            // Define desired eligibility criteria
+            var desiredDiploma = "CP";
+            var desiredExperience = 2;
+            var desiredGraduationDate = 2024;
+            var desiredSkill = "PHP";
+
+            // Check eligibility
+            if (
+                diploma === desiredDiploma
+                && experience >= desiredExperience
+                && graduationDate >= desiredGraduationDate
+                && skill === desiredSkill
+            ) {
+                // Display eligibility result
+                document.getElementById('eligibilityResult').innerText = "Congratulations! You are eligible for the job. Your interview is in 1 week!";
+            } else {
+                // Display result if not eligible
+                document.getElementById('eligibilityResult').innerText = "We are sorry, we have moved on with other candidates.";
+            }
+
+            // Prevent form submission
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Website</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Job Eligibility Checker</h2>
+            <form id="eligibilityForm" onsubmit="return checkEligibility()">
+                <label for="diploma">Enter your diploma initials:</label>
+                <input type="text" name="diploma" id="diploma" required><br>
+                
+                <label for="experience">Enter the number of years of experience:</label>
+                <input type="number" name="experience" id="experience" required><br>
+                
+                <label for="graduationDate">Enter your graduation date:</label>
+                <input type="number" name="graduationDate" id="graduationDate" required><br>
+                
+                <label for="skill">Enter an important skill for the job:</label>
+                <input type="text" name="skill" id="skill" required><br>
+                
+                <button type="submit">Check Eligibility</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Eligibility Result</h2>
+            <div id="eligibilityResult"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>
